@@ -27,7 +27,7 @@ export const bodyGame = (name, body) => {
 
 export const checkAnswer = (name, answer, body) => {
   const correctAnswer = body();
-  let message = '';
+  let message;
   if (answer == correctAnswer) {
     message = 'Correct!';
   } else {

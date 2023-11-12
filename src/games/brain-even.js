@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
-import {bodyGame, checkAnswer, getNumber, startGame} from '../index.js';
+import { bodyGame, checkAnswer, getNumber, startGame } from '../index.js';
 
 const brainEven = () => {
   const name = startGame('Answer "yes" if the number is even, otherwise answer "no".');
-  bodyGame(name,() => {
+  bodyGame(name, () => {
     const number = getNumber();
     console.log(`Question: ${number}`);
     const answer = readlineSync.question('Your answer: ');
@@ -12,7 +12,7 @@ const brainEven = () => {
     });
     console.log(message);
     return message;
-  })
+  });
 };
 
-export {brainEven};
+export default brainEven;
