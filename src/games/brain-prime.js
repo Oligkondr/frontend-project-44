@@ -12,7 +12,7 @@ const brainPrime = () => {
     const message = checkAnswer(name, answer, () => {
       let correctAnswer = number !== 1;
       for (let i = 2; i < number; i += 1) {
-        number % i === 0 ? correctAnswer *= false : correctAnswer *= true;
+        correctAnswer *= number % i !== 0;
       }
       return correctAnswer ? 'yes' : 'no';
     });

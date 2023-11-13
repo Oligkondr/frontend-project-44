@@ -28,7 +28,7 @@ export const bodyGame = (name, body) => {
 export const checkAnswer = (name, answer, body) => {
   const correctAnswer = body();
   let message;
-  if (answer == correctAnswer) {
+  if (answer === String(correctAnswer)) {
     message = 'Correct!';
   } else {
     message = `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's tray again, ${name}!`;
