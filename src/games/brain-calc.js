@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { bodyGame, checkAnswer, getNumber, getOperation, startGame } from '../index.js';
+import {
+  bodyGame, checkAnswer, getNumber, getOperation, startGame,
+} from '../index.js';
 
 const brainCalc = () => {
   const name = startGame('What is the result of the expression?');
@@ -11,11 +13,11 @@ const brainCalc = () => {
     const answer = readlineSync.question('Your answer: ');
     const message = checkAnswer(name, answer, () => {
       let correctAnswer = 0;
-      if (operation == '+') {
+      if (operation === '+') {
         correctAnswer = factor1 + factor2;
-      } else if (operation == '-') {
+      } else if (operation === '-') {
         correctAnswer = factor1 - factor2;
-      } else if (operation == '*') {
+      } else if (operation === '*') {
         correctAnswer = factor1 * factor2;
       }
       return correctAnswer;

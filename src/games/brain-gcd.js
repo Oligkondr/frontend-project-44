@@ -1,5 +1,7 @@
-import { bodyGame, checkAnswer, getNumber, startGame } from '../index.js';
 import readlineSync from 'readline-sync';
+import {
+  bodyGame, checkAnswer, getNumber, startGame,
+} from '../index.js';
 
 const brainGcd = () => {
   const name = startGame('Find teh greatest common divisor of given numbers.');
