@@ -37,3 +37,21 @@ export const checkAnswer = (name, answer, body) => {
 };
 
 export const getOperation = () => '+-*'[Math.floor(Math.random() * 3)];
+
+export const getProgression = () => {
+  let progression = [];
+  const length = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+  const element = Math.floor(Math.random() * length);
+  const step = Math.floor(Math.random() * (6 - 1)) + 1;
+  let start = getNumber();
+  const check = start + ((length - 1) * step);
+  if (check > 100) {
+    start -= check - 100
+  }
+  for (let i = start; i <= start + ((length - 1) * step); i += step) {
+    progression.push(i);
+  }
+  progression.push(progression[element])
+  progression[element] = '..'
+  return progression;
+};
