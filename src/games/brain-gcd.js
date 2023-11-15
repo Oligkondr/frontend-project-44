@@ -4,7 +4,7 @@ import {
 } from '../index.js';
 
 const brainGcd = () => {
-  const name = startGame('Find teh greatest common divisor of given numbers.');
+  const name = startGame('Find the greatest common divisor of given numbers.');
   bodyGame(name, () => {
     const number1 = getNumber();
     const number2 = getNumber();
