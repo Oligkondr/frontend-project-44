@@ -31,7 +31,7 @@ export const checkAnswer = (name, answer, body) => {
   if (answer === String(correctAnswer)) {
     message = 'Correct!';
   } else {
-    message = `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's tray again, ${name}!`;
+    message = `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`;
   }
   return message;
 };
