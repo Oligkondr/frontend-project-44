@@ -4,9 +4,12 @@ import {
 } from '../index.js';
 
 const brainProgression = () => {
+
   const game = 'progression';
   const name = startGame('What number is missing in the progression?');
+
   bodyGame(name, () => {
+
     const progression = getProgression();
     const hiddenElement = progression.pop();
 
