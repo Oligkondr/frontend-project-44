@@ -73,7 +73,9 @@ export const showQuestion = (gameName, elem1, elem2 = null, elem3 = null) => {
     case 'progression':
       console.log(`Question: ${elem1.join(' ')}`);
       break;
+    default:
+      console.log('No questions today :D');
   }
 };
 
-export const showMessage = message => console.log(message);
+export const showMessage = (message) => console.log(message);
