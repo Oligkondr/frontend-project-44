@@ -1,13 +1,16 @@
 import readlineSync from 'readline-sync';
 import {
-  bodyGame, checkAnswer, getNumber, startGame,
+  bodyGame, checkAnswer, getNumber, showMessage, showQuestion, startGame,
 } from '../index.js';
 
 const brainPrime = () => {
+  const game = 'prime';
   const name = startGame('Answer "yes" if given number is prime. Otherwise answer "no".');
   bodyGame(name, () => {
     const number = getNumber();
-    console.log(`Question: ${number}`);
+
+    showQuestion(game, number);
+
     const answer = readlineSync.question('Your answer: ');
     const message = checkAnswer(name, answer, () => {
       let correctAnswer = number !== 1;
@@ -16,7 +19,9 @@ const brainPrime = () => {
       }
       return correctAnswer ? 'yes' : 'no';
     });
-    console.log(message);
+
+    showMessage(message);
+
     return message;
   });
 };

@@ -1,17 +1,22 @@
 import readlineSync from 'readline-sync';
 import {
-  bodyGame, checkAnswer, getProgression, startGame,
+  bodyGame, checkAnswer, getProgression, showMessage, showQuestion, startGame,
 } from '../index.js';
 
 const brainProgression = () => {
+  const game = 'progression';
   const name = startGame('What number is missing in the progression?');
   bodyGame(name, () => {
     const progression = getProgression();
     const hiddenElement = progression.pop();
-    console.log(`Question: ${progression.join(' ')}`);
+
+    showQuestion(game, progression);
+
     const answer = readlineSync.question('Your answer: ');
     const message = checkAnswer(name, answer, () => hiddenElement);
-    console.log(message);
+
+    showMessage(message);
+
     return message;
   });
 };

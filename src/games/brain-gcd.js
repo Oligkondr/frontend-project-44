@@ -1,14 +1,17 @@
 import readlineSync from 'readline-sync';
 import {
-  bodyGame, checkAnswer, getNumber, startGame,
+  bodyGame, checkAnswer, getNumber, showMessage, showQuestion, startGame,
 } from '../index.js';
 
 const brainGcd = () => {
+  const game = 'gcd';
   const name = startGame('Find the greatest common divisor of given numbers.');
   bodyGame(name, () => {
     const number1 = getNumber();
     const number2 = getNumber();
-    console.log(`Question: ${number1} ${number2}`);
+
+    showQuestion(game, number1, number2);
+
     const answer = readlineSync.question('Your answer: ');
     const message = checkAnswer(name, answer, () => {
       let maxNum = Math.max(number1, number2);
@@ -20,7 +23,9 @@ const brainGcd = () => {
       }
       return maxNum;
     });
-    console.log(message);
+
+    showMessage(message);
+
     return message;
   });
 };

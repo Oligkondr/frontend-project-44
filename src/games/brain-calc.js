@@ -1,15 +1,18 @@
 import readlineSync from 'readline-sync';
 import {
-  bodyGame, checkAnswer, getNumber, getOperation, startGame,
+  bodyGame, checkAnswer, getNumber, getOperation, showMessage, showQuestion, startGame,
 } from '../index.js';
 
 const brainCalc = () => {
+  const game = 'calc';
   const name = startGame('What is the result of the expression?');
   bodyGame(name, () => {
     const factor1 = getNumber();
     const factor2 = getNumber();
     const operation = getOperation();
-    console.log(`Question: ${factor1} ${operation} ${factor2}`);
+
+    showQuestion(game, factor1, operation, factor2);
+
     const answer = readlineSync.question('Your answer: ');
     const message = checkAnswer(name, answer, () => {
       let correctAnswer = 0;
@@ -22,7 +25,9 @@ const brainCalc = () => {
       }
       return correctAnswer;
     });
-    console.log(message);
+
+    showMessage(message);
+
     return message;
   });
 };

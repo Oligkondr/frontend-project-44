@@ -55,3 +55,25 @@ export const getProgression = () => {
   progression[element] = '..';
   return progression;
 };
+
+export const showQuestion = (gameName, elem1, elem2 = null, elem3 = null) => {
+  switch (gameName) {
+    case 'calc':
+      console.log(`Question: ${elem1} ${elem2} ${elem3}`);
+      break;
+    case 'even':
+      console.log(`Question: ${elem1}`);
+      break;
+    case 'prime':
+      console.log(`Question: ${elem1}`);
+      break;
+    case 'gcd':
+      console.log(`Question: ${elem1} ${elem2}`);
+      break;
+    case 'progression':
+      console.log(`Question: ${elem1.join(' ')}`);
+      break;
+  }
+};
+
+export const showMessage = message => console.log(message);
