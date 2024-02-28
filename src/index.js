@@ -33,6 +33,7 @@ export const checkAnswer = (name, answer, body) => {
   } else {
     message = `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`;
   }
+
   return message;
 };
 
